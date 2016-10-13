@@ -51,100 +51,63 @@ textarea, input[type="text"], input[type="password"] {
   line-height: 15px;
 }
 
-.bg-blue {
-  background-color: #1E90FF;
+.bg-black {
+  background-color: #444444;
 }
 
 .bg-red {
-  background-color: #FA8072;
+  background-color: #562C27;
 }
 
 /* ==================== Chess Board ==================== */
+
 #chess-board {
-  background-image: url(/images/test.png);
-  background-size: 210px 714px ;
+  border: 5px solid #eee;
 }
 
-#chess-board td{
-  height: 42px;
-  width: 42px;
-background-repeat: no-repeat;
+#chess-board td {
+  height: 65px;
+  width: 65px;
+  border: 5px solid #eee;
 }
 
 #float-chess {
-  height: 42px;
-  width: 42px;
-background-repeat: no-repeat;
-  position: absolute;
-}
-
-.img-blue-chess {
-  background-image: url(/images/blueChess.png);
-  background-size: 496.44px 26.88px;
-  /*-webkit-transform:rotate(90deg);*/
-  /*-moz-transform:rotate(90deg);*/
-  /*-ms-transform:rotate(90deg);*/
-  /*-o-transform:rotate(90deg);*/
-  /*transform:rotate(90deg);*/
-}
-
-.img-red-chess {
-  background-image: url(/images/redChess.png);
-  background-size: 496.44px 26.88px;
-  /*-webkit-transform:rotate(-90deg);*/
-  /*-moz-transform:rotate(-90deg);*/
-  /*-ms-transform:rotate(-90deg);*/
-  /*-o-transform:rotate(-90deg);*/
-  /*transform:rotate(-90deg);*/
+  height: 65px;
+  width: 65px;
+  border: 5px solid #eee;
 }
 
 .hidden {
   display: none;
 }
-.img-0 { background-position : 100px 100px;}
 
-.img-1 { background-position:    3.78px 7.56px; }
+#float-chess {
+  position: absolute;
+}
 
-.img-2 { background-position:    -38.22px 7.56px; }
+.img-chess {
+  background-image: url(/images/chess.png);
+}
 
-.img-3 { background-position:    -80.22px 7.56px; }
+.img-red-1 { background-position:    0px 0px; }
+.img-red-2 { background-position:  -60px 0px; }
+.img-red-5 { background-position: -120px 0px; }
+.img-red-3 { background-position: -180px 0px; }
+.img-red-4 { background-position: -240px 0px; }
+.img-red-6 { background-position: -300px 0px; }
+.img-red-7 { background-position: -360px 0px; }
 
-.img-4 { background-position:    -122.22px 7.56px; }
+.img-black-1 { background-position:    0px -60px; }
+.img-black-2 { background-position:  -60px -60px; }
+.img-black-5 { background-position: -120px -60px; }
+.img-black-3 { background-position: -180px -60px; }
+.img-black-4 { background-position: -240px -60px; }
+.img-black-6 { background-position: -300px -60px; }
+.img-black-7 { background-position: -360px -60px; }
 
-.img-5 { background-position:    -164.22px 7.56px; }
-
-.img-6 { background-position:    -206.22px 7.56px; }
-
-.img-7 { background-position:    -248.22px 7.56px; }
-
-.img-8 { background-position:    -290.22px 7.56px; }
-
-.img-9 { background-position:    -332.22px 7.56px; }
-
-.img-10 { background-position:    -374.22px 7.56px; }
-
-.img-11 { background-position:    -416.22px 7.56px; }
-
-
-
-.img-12 { background-position:    -457.8px 7.56px; }
-
+.img-blank { background-position: -420px -60px; }
 
 
-/*#chess-board {*/
-  /*border: 5px solid #eee;*/
-/*}*/
-
-/*#chess-board td {*/
-  /*height: 65px;*/
-  /*width: 65px;*/
-  /*border: 5px solid #eee;*/
-/*}*/
-
-/*#float-chess {*/
-  /*height: 65px;*/
-  /*width: 65px;*/
-  /*border: 5px solid #eee;*/
 
 #demo-text {
   line-height: 2em;

@@ -1,15 +1,16 @@
 <% include head %>
-<h1>User List</h1>
-<table id="user-list-table" class="table table-hover">
+
+<div class="container">
+<table class="table table-striped">
 <thead>
   <tr>
-    <td><a href="/user/list?sort=+name">Name</a></td>
-    <td><a href="/user/list?sort=-rating">Rating</a></td>
-    <td><a href="/user/list?sort=-submit">Submit</td>
-    <td><a href="/user/list?sort=-win">Win</a></td>
-    <td><a href="/user/list?sort=-draw">Draw</a></td>
-    <td><a href="/user/list?sort=-lose">Lose</a></td>
-    <td></td>
+    <th><a href="/user/list?sort=+name">Name</a></th>
+    <th><a href="/user/list?sort=-rating">Rating</a></th>
+    <th><a href="/user/list?sort=-submit">Submit</th>
+    <th><a href="/user/list?sort=-win">Win</a></th>
+    <th><a href="/user/list?sort=-draw">Draw</a></th>
+    <th><a href="/user/list?sort=-lose">Lose</a></th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -18,28 +19,27 @@
     <td><%= u.name %></td>
     <td><%= u.rating %></td>
     <td><%= u.submit %></td>
-    <td><span class="label label-success"><%= u.win %></span></td>
-    <td><span class="label label-warning"><%= u.draw %></span></td>
-    <td><span class="label label-danger"><%= u.lose %></span></td>
+    <td class="table-success"><%= u.win %></td>
+    <td class="table-warning"><%= u.draw %></td>
+    <td class="table-danger"><%= u.lose %></td>
     <td><a href="/ai/list?chart=true&amp;username=<%= u.name %>">(Detail)</a></td>
   </tr>
 <% } %>
 </tbody>
 </table>
 <nav>
-  <ul class="pager">
   <% if (page === 1) { %>
-    <li class="previous disabled"><a href="#">&larr; Newer</a></li>
+    <a class="disabled pull-xs-left" href="#">Previous</a>
   <% } else { %>
-    <li class="previous"><a href="/user/list?page=<%= page-1 %>&amp;sort=<%= sort %>">&larr; Newer</a></li>
+    <a class="pull-xs-left" href="/user/list?page=<%= page-1 %>&amp;sort=<%= sort %>">Previous</a>
   <% } %>
 
 
   <% if (page === totpage) { %>
-    <li class="next disabled"><a href="#">&rarr; Older</a></li>
+    <a class="disabled pull-xs-right" href="#">Next</a>
   <% } else { %>
-    <li class="next"><a href="/user/list?page=<%= page+1 %>&amp;sort=<%= sort %>">&rarr; Older</a></li>
+    <a class="pull-xs-right" href="/user/list?page=<%= page+1 %>&amp;sort=<%= sort %>">Next</a>
   <% } %>
-  </ul>
 </nav>
+</div>
 <% include foot %>

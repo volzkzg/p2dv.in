@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= typeof(title) === 'undefined' ? '' : title + ' - ' %><%= settings.websiteName %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-<!--    <link href="<%= settings.staticCDN %>/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+    <!--
+	<link href="<%= settings.staticCDN %>/google-code-prettify/prettify.css" rel="stylesheet">
+
+	-->
     <link href="<%= settings.staticCDN %>/css/c3.css" rel="stylesheet">
+    <link href="<%= settings.staticCDN %>/css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="<%= settings.staticCDN %>/google-code-prettify/prettify.css" rel="stylesheet">
     <link href="<%= settings.staticCDN %>/css/layout.css?20151202v3" rel="stylesheet">
-    <link href="<%= settings.staticCDN %>/css/sticky-footer-navbar.css" rel="stylesheet">
-    
-    <script src="<%= settings.staticCDN %>/js/jquery-2.1.1.min.js"></script>
-    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
   </head>
 
   <body>

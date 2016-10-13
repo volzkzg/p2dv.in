@@ -1,4 +1,12 @@
 /*-- Chart --*/
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
 
 .c3 svg {
   font: 10px sans-serif;

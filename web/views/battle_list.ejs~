@@ -39,18 +39,22 @@
 <% } %>
 </tbody>
 </table>
+
 <nav>
+  <ul class="pager">
   <% if (page === 1) { %>
-    <a class="disabled pull-xs-left" href="#">Previous</a>
+    <li class="previous disabled"><a href="#">&larr; Newer</a></li>
   <% } else { %>
-    <a class="pull-xs-left" href="/battle/list?page=<%= page-1 %>">Previous</a>
+    <li class="previous"><a href="/battle/list?page=<%= page-1 %>">&larr; Newer</a></li>
   <% } %>
 
+
   <% if (page === totpage) { %>
-    <a class="disabled pull-xs-right" href="#">Next</a>
+    <li class="next disabled"><a href="#">&rarr; Older</a></li>
   <% } else { %>
-    <a class="pull-xs-right" href="/battle/list?page=<%= page+1 %>">Next</a>
+    <li class="next"><a href="/battle/list?page=<%= page+1 %>">&rarr; Older</a></li>
   <% } %>
+  </ul>
 </nav>
 
 </div>

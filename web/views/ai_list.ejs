@@ -1,26 +1,18 @@
 <% include head %>
-<% if (username) { %>
-<%   if (showRatingChart) { %>
-<h1>Rating Chart of <small><%= username %></small></h1>
-<div id="chart"></div>
-<%   } %>
-<h1>AI List of <small><%= username %></small></h1>
-<% } else { %>
-<h1>AI List</h1>
-<% } %>
-<table id="ai-list-table" class="table table-hover">
+<div class="container">
+<table class="table table-striped">
 <thead>
   <tr>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=+user">User</a> (<a href="/ai/list?username=<%= username %>&amp;sort=+user%20-idOfUser">Submit</a>)</td>
-    <td>AI Name</td>
-    <td>Status</td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-rating">Rating</a></td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-win">Win</a></td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-draw">Draw</a></td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-lose">Lose</a></td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-ratio">Ratio</a></td>
-    <td><a href="/ai/list?username=<%= username %>&amp;sort=-uploadDate">Upload Date</a></td>
-    <td></td>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=+user">User</a> (<a href="/ai/list?username=<%= username %>&amp;sort=+user%20-idOfUser">Submit</a>)</th>
+    <th>AI Name</th>
+    <th>Status</th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-rating">Rating</a></th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-win">Win</a></th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-draw">Draw</a></th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-lose">Lose</a></th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-ratio">Ratio</a></th>
+    <th><a href="/ai/list?username=<%= username %>&amp;sort=-uploadDate">Upload Date</a></th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -29,16 +21,16 @@
     <td><%= ai.user %> (<%= ai.idOfUser %>)</td>
     <td><%= ai.name %></td>
     <% if (ai.status === 'Unavailable')  { %>
-      <td><span class="label label-danger"><%= ai.status %></span></td>
+      <td class="table-danger"><%= ai.status %></td>
     <% } else if (ai.status === 'Available') { %>
-      <td><span class="label label-success"><%= ai.status %></span></td>
+      <td class="table-success"><%= ai.status %></td>
     <% } else { %>
-      <td><span class="label label-default"><%= ai.status %></span></td>
+      <td class="table-info"><%= ai.status %></td>
     <% } %>
     <td><%= ai.rating %></td>
-    <td><span class="label label-success"><%= ai.win %></span></td>
-    <td><span class="label label-warning"><%= ai.draw %></span></td>
-    <td><span class="label label-danger"><%= ai.lose %></span></td>
+    <td class="table-success"><%= ai.win %></td>
+    <td class="table-warning"><%= ai.draw %></td	>
+    <td class="table-danger"><%= ai.lose %></td>
     <td><%= Number(ai.ratio*100).toFixed(1) %>%</td>
     <td><%=: ai.uploadDate | formatDate %></td>
     <td><a href="/ai/<%= ai._id %>">(Detail)</a></td>
@@ -47,21 +39,20 @@
 </tbody>
 </table>
 <nav>
-  <ul class="pager">
   <% if (page === 1) { %>
-    <li class="previous disabled"><a href="#">&larr; Newer</a></li>
+    <a class="disabled pull-xs-left" href="#">Previous</a>
   <% } else { %>
-    <li class="previous"><a href="/ai/list?username=<%= username %>&amp;page=<%= page-1 %>&amp;sort=<%= sort %>">&larr; Newer</a></li>
+    <a class="pull-xs-left" href="/ai/list?page=<%= page-1 %>&amp;sort=<%= sort %>">Previous</a>
   <% } %>
 
 
   <% if (page === totpage) { %>
-    <li class="next disabled"><a href="#">&rarr; Older</a></li>
+    <a class="disabled pull-xs-right" href="#">Next</a>
   <% } else { %>
-    <li class="next"><a href="/ai/list?username=<%= username %>&amp;page=<%= page+1 %>&amp;sort=<%= sort %>">&rarr; Older</a></li>
+    <a class="pull-xs-right" href="/ai/list?page=<%= page+1 %>&amp;sort=<%= sort %>">Next</a>
   <% } %>
-  </ul>
 </nav>
+</div>
 <% include foot_script %>
 <% if (showRatingChart) { %>
 <script src="<%= settings.staticCDN %>/js/d3.min.js"></script>
